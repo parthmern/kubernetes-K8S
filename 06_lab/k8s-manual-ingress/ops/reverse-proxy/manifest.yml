@@ -29,10 +29,10 @@ data:
       }
       server {
         listen 80;
-        server_name k8s-db.parthmern.store;
+        server_name k8s-frontend.parthmern.store;
 
         location / {
-          proxy_pass http://db.default.svc.cluster.local:5432/;
+          proxy_pass http://frontend.frontend-team.svc.cluster.local:3000/;
           proxy_http_version 1.1;
           proxy_set_header Upgrade $http_upgrade;
           proxy_set_header Connection 'upgrade';
